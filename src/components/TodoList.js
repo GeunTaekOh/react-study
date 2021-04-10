@@ -12,4 +12,5 @@ const TodoList = ({todos, onRemove, onToggle}) => {
   );
 };
 
-export default TodoList;
+//export default TodoList;
+export default React.memo(TodoList);  //TodoListItem 을 ReactMemo 로 컴포넌트 최적화를 해줬으면 이를 TodoList 도 최적화해줘야한다.

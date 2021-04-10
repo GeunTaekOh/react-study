@@ -64,7 +64,7 @@ const App = () => {
   //       text,
   //       checked:false,
   //     };
-  //     setTodos(todos.concat(todo));
+  //     setTodos(todos.concat(todo));  
   //     nextId.current += 1;
   //   },
   //   [todos],
@@ -78,7 +78,7 @@ const App = () => {
     //setTodos(todos => todos.concat(todo));
     dispatch({type:'INSERT', todo});
     nextId.current += 1;
-  }, []);    // 위 방식과 다르게 useState의 함수형 업데이트 -> todos 배열이 업데이트되면 이 함수도 같이 바뀌지 않음.
+  }, []);    // 위 방식과 다르게 useState의 함수형 업데이트 -> todos 배열이 업데이트되면 이 함수도 같이 바뀌지 않음. 
 
 
   // const onRemove = useCallback(
@@ -106,7 +106,7 @@ const App = () => {
   const onToggle = useCallback(id => {
     //setTodos( todos => 
       // todos.map(todo =>
-      //   todo.id === id ? {...todo, checked: !todo.checked} : todo,
+      //   todo.id === id ? {...todo, checked: !todo.checked} : todo, //이렇게 하는 경우는 새로운 todos 를 만들고 필요한 부분을 교체하는 방식으로 진행. : 불변성을 지킨다.
       //   ),
       // );
     dispatch({type:'TOGGLE', id});
