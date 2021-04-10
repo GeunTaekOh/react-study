@@ -5,7 +5,7 @@ import TodoTemplate from './components/TodoTemplate';
 
 function createBulkTodos(){
   const array=[];
-  for (let i = 0; i <= 2500; i++){
+  for (let i = 1; i <= 2500; i++){
     array.push({
       id:i,
       text:`할 일 ${i}`,
@@ -38,7 +38,7 @@ const App = () => {
   //   },
   // ]);
 
-  const [todos, setTodos] = useState(createBulkTodos); // 여기에 함수 이름을 적었는데, 함수처럼 () 를 같이 적으면 리렌더링될때마다 이 함수가 호출됨.
+  const [todos, setTodos] = useState(createBulkTodos); // 여기에 함수 이름만 적었는데, 함수처럼 () 를 같이 적으면 리렌더링될때마다 이 함수가 호출됨.
 
   const nextId = useRef(2501); // id 값은 렌더되지 않으므로 퍼포먼스를 위해 ref 로 만들기
   
